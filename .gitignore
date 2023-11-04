@@ -35,5 +35,8 @@ lerna-debug.log*
 !.vscode/extensions.json
 
 #
-
 .env
+
+# Prisma
+/prisma/migrations
+/prisma/migration_lock.toml

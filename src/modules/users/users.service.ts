@@ -6,13 +6,12 @@ export class UsersService {
   constructor(private readonly usersRepository: UsersRepository) {}
 
   async getUserById(userId: string) {
-    const user = await this.usersRepository.findUnique({
+    return this.usersRepository.findUnique({
       where: { id: userId },
+      select: {
+        name: true,
+        email: true,
+      }
     });
-
-    return {
-      name: user.name,
-      email: user.email,
-    }
   }
 }

@@ -1,7 +1,7 @@
 import { ArgumentMetadata, ParseEnumPipe } from "@nestjs/common";
 
-export class OptionalParseEnumPipe extends ParseEnumPipe {
-  override transform(value: string, metadata: ArgumentMetadata) {
+export class OptionalParseEnumPipe<T = any> extends ParseEnumPipe<T> {
+  override transform(value: T, metadata: ArgumentMetadata) {
     if (typeof value === 'undefined') {
       return undefined;
     }
